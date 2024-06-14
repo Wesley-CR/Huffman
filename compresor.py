@@ -6,7 +6,7 @@ freq = {}
 if len(sys.argv) == 1 :
     print("El programa no tiene argumentos")
 else:
-    print("Primer Argumento:", sys.argv[1])
+    #print("Primer Argumento:", sys.argv[1])
     file = open(sys.argv[1], "r")
     content = file.read()
     #print(content)
@@ -19,7 +19,7 @@ for i in range(len(content)):
         freq[content[i]] = 1
 
 minmaxing = dict(sorted(freq.items(), key=lambda item: item[1])) #https://www.freecodecamp.org/news/sort-dictionary-by-value-in-python/
-print(minmaxing)
+#print(minmaxing)
 listakeys = list(minmaxing.keys())
 listavalues = list(minmaxing.values())
 #arbolmaker
@@ -64,7 +64,7 @@ routes = owo.strip().split("\n")
 routes = [route.split(":") for route in routes]
 while [''] in routes:
     routes.remove([''])
-print(routes)
+#print(routes)
 for char, path in routes:
     if char == 'ln':
         paths['\n'] = path
@@ -102,7 +102,7 @@ def anchuraMax(T):
     height = tree_height(T)
     levels = [[] for _ in range(height + 1)]
 
-    recorrer_level(T, 0, levels)  # Start traversal from the root
+    recorrer_level(T, 0, levels)
 
     max_width = max(len(level) for level in levels) 
 
@@ -119,6 +119,6 @@ def anchuraMax(T):
         minecraft += f"Caracter: {key} - Frecuencia: {value}\n"
     return minecraft
 
-#write a file with the stats
 with open(f"{sys.argv[1]}.stats", "w") as file:
     file.write(anchuraMax(arbol))
+    print("Archivo comprimido.")
