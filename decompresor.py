@@ -59,7 +59,7 @@ def decompress_text(tree, compressed):
 
 def main():
     if len(sys.argv) < 4:
-        print("Insufficient Arguments")
+        print("Sin suficientes argumentos")
         sys.exit()
 
     # Leer los 2 archivos
